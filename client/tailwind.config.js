@@ -22,6 +22,7 @@ module.exports = {
             transparent: 'transparent',
             'sec' : "#712EFF",
             'white': '#ffffff',
+            'red' : "#DC2626",
             'color': {
               100: '#101729',
               200: '#202939',

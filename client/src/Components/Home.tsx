@@ -1,7 +1,10 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+
+  const navigate = useNavigate();
+
   return (
       <div className="block h-[70vh] w-full justify-center items-center">
         <div className=" bg-gray-500 text-center  text-color-100">
@@ -17,7 +20,11 @@ function Home() {
               </div>
               
               <div>
-                <button type="button" className="mb-3 bg-color-100 hover:bg-color-700 text-white items-center rounded-lg border border-gray-300 focus:border-color-800 px-4 py-2">
+                <button
+                  type="button"
+                  onClick={() => navigate("/register")}
+                  className="mb-3 bg-color-100 hover:bg-color-700 text-white items-center rounded-lg border border-gray-300 focus:border-color-800 px-4 py-2"
+                >
                   <span> Get Started </span>
                   <span className="ml-2">→</span>
                 </button>

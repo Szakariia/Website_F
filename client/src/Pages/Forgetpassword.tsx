@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-import Styleinput from './StyleComponents/StyleInput';
+import React, { useState } from "react";
+import Styleinput from '../Components/StyleComponents/StyleInput';
 import { useNavigate } from 'react-router-dom';
 
 interface FormValues {
-    username: string,
-    password: string
+    email: string
 }
 
 const intialFormValues : FormValues = {
-    username: '',
-    password: ''
+    email: ''
 }
 
-function Login() {
+function Forgetpassword() {
 
     const navigate = useNavigate();
     const [formValues, setFormValues] = useState<FormValues>(intialFormValues);
@@ -21,26 +19,20 @@ function Login() {
   return (
     <div className="mx-10 relative flex flex-1 flex-col items-center justify-center pt-10 pb-16">
        
-        <div className="pb-10 inline-flex items-center font-bold text-2xl text-color-100">
-              Login
+        <div className="mb-3 inline-flex items-center font-bold text-2xl text-color-100">
+            Reset your password
         </div>
+        <p className="pb-10 text-sm  text-color-700 text-center ">Enter your email and we'll send you a link to <br/>reset your password.</p>
 
-        {/* <p className="mb-6">
-            <a className="text-center text-red text-sm">These credentials do not match our records.</a>
-        </p> */}
         <form className="w-full max-w-sm bg-gray-500 text-color-100 space-y-8">
 
-            <Styleinput name='Username' placeholder='' type="text" onValueChange={(value) => setFormValues({ ...formValues, username: value })}/>
-            <Styleinput name='Password' placeholder='' type="password" onValueChange={(value) => setFormValues({ ...formValues, password: value })}/>
+            <Styleinput name='Email address' placeholder='' type="text" onValueChange={(value) => setFormValues({ ...formValues, email: value })}/>
 
             <button type="submit" className="w-full flex justify-center bg-color-100 hover:bg-color-700 text-white rounded-lg border border-gray-300 px-4 py-2">
                 <span className="text-center">
-                    Sign in to account 
+                    Reset your password
                 </span>
             </button>
-            <p className="p-5 text-center text-color-700 ">
-                <a href="/resetpassword" className="text-sm hover:underline"> Forgot password? </a>
-            </p>
         </form>
 
         <footer className="">
@@ -68,4 +60,5 @@ function Login() {
 );
 }
 
-export default Login;
+export default Forgetpassword;
+  
